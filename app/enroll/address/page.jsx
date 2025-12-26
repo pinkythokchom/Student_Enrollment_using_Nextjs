@@ -44,6 +44,24 @@ export default function Address() {
       <div className="max-w-4xl mx-auto px-6 space-y-12">
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
+          <div className="flex flex-wrap justify-center sm:justify-between gap-4">
+          {["Student", "Academic", "Address", "Review"].map((label, index) => (
+            <div key={label} className="flex items-center gap-2">
+              <div
+                className={`h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center
+                text-sm font-bold
+                ${index === 2
+                  ? "bg-black text-white"
+                  : "bg-gray-200 text-gray-600"}`}
+              >
+                {index + 1}
+              </div>
+              <span className={`text-sm ${index === 0 ? "text-black" : "text-gray-500"}`}>
+                {label}
+              </span>
+            </div>
+          ))}
+        </div>
 
           {/* Address */}
           <Card className="rounded-2xl bg-white shadow-md">

@@ -76,23 +76,19 @@ const ReviewSubmit = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-100 to-gray-200 px-4 py-12">
       <div className="max-w-4xl mx-auto space-y-8">
 
-        {/* Steps */}
-        <div className="flex justify-between">
+        <div className="flex flex-wrap justify-center sm:justify-between gap-4">
           {["Student", "Academic", "Address", "Review"].map((label, index) => (
             <div key={label} className="flex items-center gap-2">
               <div
-                className={`h-9 w-9 rounded-full flex items-center justify-center text-sm font-bold
-                  ${index === 3
-                    ? "bg-black text-white"
-                    : "bg-gray-300 text-gray-600"}`}
+                className={`h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center
+                text-sm font-bold
+                ${index === 3
+                  ? "bg-black text-white"
+                  : "bg-gray-200 text-gray-600"}`}
               >
                 {index + 1}
               </div>
-              <span
-                className={`text-sm font-medium ${
-                  index === 3 ? "text-black" : "text-gray-500"
-                }`}
-              >
+              <span className={`text-sm ${index === 0 ? "text-black" : "text-gray-500"}`}>
                 {label}
               </span>
             </div>
